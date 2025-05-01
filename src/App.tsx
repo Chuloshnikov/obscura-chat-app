@@ -1,14 +1,24 @@
+
+import { useAuthStore } from "./store/useAuthStore";
+import { useEffect } from "react";
+
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import SignUpPage from "./pages/SignUpPage";
+import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
+
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import { Toaster } from "sonner";
 import { Loader } from "lucide-react";
-import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage";
-import ProfilePage from "./pages/ProfilePage";
-import HomePage from "./pages/HomePage";
-import Navbar from "./components/Navbar";
+
 
 function App() {
-
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   if (isCheckingAuth && !authUser) {
     return (
