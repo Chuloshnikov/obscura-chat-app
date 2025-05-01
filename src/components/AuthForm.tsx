@@ -25,17 +25,14 @@ const AuthForm = ({ type }: {type: FormType}) => {
   const formSchema = authFormSchema(type);
 
   const { authUser, logIn, signUp, isLoggingIn, isSigningUp, isCheckingAuth } = useAuthStore();
-  
-  {
-    /*
-      useEffect(() => {
+    console.log(authUser);
+
+    useEffect(() => {
     if (authUser) {
         navigate('/');
     }
-  }, [authUser]);
-    
-    */
-  }
+  }, [authUser, navigate]);
+
 
 
   const form = useForm<z.infer<typeof formSchema>>({
