@@ -1,9 +1,14 @@
-import React from 'react'
+import AuthContainer from '@/components/AuthContainer';
+import AuthForm from '@/components/AuthForm';
 
 const LoginPage = () => {
+  
   return (
-    <div>LoginPage</div>
-  )
+    <AuthContainer>
+        <AuthForm type="sign-in"/>
+    </AuthContainer>
+  
+);
 }
 
 export default LoginPage;

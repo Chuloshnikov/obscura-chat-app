@@ -118,3 +118,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.auth-layout {
+  @apply flex items-center justify-center h-screen w-screen mx-auto max-w-7xl max-sm:px-4 max-sm:py-8;
+}
+
+.btn {
+  @apply w-full bg-zinc-500 hover:bg-gray-400 duration-200 rounded-lg min-h-10 font-bold !px-5 cursor-pointer;
+}
