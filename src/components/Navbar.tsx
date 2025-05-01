@@ -2,7 +2,10 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <div
+    className='fixed top-0 left-0'
+    >Navbar
+    </div>
   )
 }
 
