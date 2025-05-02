@@ -1,5 +1,4 @@
 import { obscuraImg } from "@/assets";
-import { MessageSquare } from "lucide-react";
 
 const NoChatSelected = () => {
   return (
