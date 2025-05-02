@@ -15,8 +15,15 @@ export interface User {
     updatedAt: string;
   }
 
+  export interface ChatUser {
+    _id: string;
+    fullName: string;
+    email: string;
+    profilePic?: string;
+  }
+
   export interface AuthState {
-    authUser: User | null;
+    authUser: User | any;
     isSigningUp: boolean;
     isLoggingIn: boolean;
     isUpdatingProfile: boolean;
@@ -62,13 +69,13 @@ export interface User {
     senderId: string;
     receiverId: string;
     createdAt: string;
-    // Добавьте другие свойства сообщения по необходимости
+    image?: string;
   }
   
   export interface ChatState {
     messages: Message[];
     users: User[];
-    selectedUser: User | null;
+    selectedUser: User | any;
     isUsersLoading: boolean;
     isMessagesLoading: boolean;
     
@@ -78,9 +85,10 @@ export interface User {
     sendMessage: (messageData: MessageData) => Promise<void>;
     subscribeToMessages: () => void;
     unsubscribeFromMessages: () => void;
-    setSelectedUser: (selectedUser: User) => void;
+    setSelectedUser: (selectedUser: User | null) => void;
   }
   
   export interface MessageData {
     text: string;
+    image?: string | null;
   }

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
-import { LogOut, MessageSquare, Settings, User } from 'lucide-react';
+import { LogOut, User } from 'lucide-react';
 import { obscuraImg } from '@/assets';
 
 const Navbar = () => {
@@ -14,8 +14,8 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-full">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-all">
-            <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center bg-inherit">
-              <img src={obscuraImg} alt="logo" width={80} height={80} />
+            <div className="size-9 bg-primary/10 flex items-center justify-center  rounded-full">
+              <img src={obscuraImg} alt="logo" width={80} height={80}/>
             </div>
             <h1 className="text-lg font-bold">Obscura</h1>
           </Link>
