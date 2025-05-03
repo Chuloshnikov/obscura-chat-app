@@ -10,7 +10,7 @@ return (
     <div className="auth-layout">
         {children}
       <div
-        className={`absolute -top-20 -z-20' ${theme === 'dark' ? 'opacity-90' : 'opacity-10'}`}
+        className={`absolute -top-20 -z-20 backdrop-blur-lg' ${theme === 'dark' ? 'opacity-90' : 'opacity-10'}`}
       >
           <img src={obscuraImg} alt="logo" width={900} height={900} />
       </div>

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
 import { LogOut, User } from 'lucide-react';
 import { obscuraImg } from '@/assets';
+import ThemeSwitcher from './ThemeSwitcher';
+import { Button } from './ui/button';
 
 const Navbar = () => {
   const { logOut, authUser } = useAuthStore();
@@ -14,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-full">
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2.5 hover:opacity-80 transition-all">
-            <div className="size-9 bg-primary/10 flex items-center justify-center  rounded-full">
+            <div className="size-9 bg-white flex items-center justify-center rounded-full">
               <img src={obscuraImg} alt="logo" width={80} height={80}/>
             </div>
             <h1 className="text-lg font-bold">Obscura</h1>
@@ -22,19 +24,25 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <div>theme</div>
+          <ThemeSwitcher/>
 
           {authUser && (
             <>
-              <Link to={"/profile"} className={`btn btn-sm gap-2`}>
-                <User className="size-5" />
-                <span className="hidden sm:inline">Profile</span>
-              </Link>
+              <Button
+              variant="ghost"
+              size="icon"
+              >
+                  <Link to={"/profile"}>
+                    <User className="size-5" />
+                  </Link>
+              </Button>
 
-              <button className="flex gap-2 items-center cursor-pointer" onClick={logOut}>
+              <Button 
+              variant="ghost"
+              size="icon"
+              onClick={logOut}>
                 <LogOut className="size-5" />
-                <span className="hidden sm:inline">Logout</span>
-              </button>
+              </Button>
             </>
           )}
         </div>
