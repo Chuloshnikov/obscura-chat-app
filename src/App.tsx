@@ -32,14 +32,10 @@ function App() {
     <div>
     <Navbar/>
       <Routes>
-        <Route path="/sign-in" element={<LoginPage/>}/>
-        <Route path="/sign-up" element={<SignUpPage/>}/>
-        <Route path="/" element={<HomePage/>}/>
-         {/* <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/sign-in"/>}/>
+          <Route path="/" element={authUser ? <HomePage/> : <Navigate to="/sign-in"/>}/>
           <Route path="/sign-up" element={!authUser ? <SignUpPage/> : <Navigate to="/"/>}/>
           <Route path="/sign-in" element={!authUser ? <LoginPage/> : <Navigate to="/"/>}/>
           <Route path="/profile" element={authUser ? <ProfilePage/> : <Navigate to="/sign-in"/>}/>
-          */}
       </Routes>
     <Toaster/>
 </div>
