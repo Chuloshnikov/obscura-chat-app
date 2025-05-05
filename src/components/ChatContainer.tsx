@@ -62,7 +62,7 @@ const ChatContainer = () => {
             >
               {(message.text || message.image) && (
                 <div
-                  className={`border inline-block p-4 rounded my-1 max-w-[50%] break-words ${bubbleStyle}`}
+                  className={`border inline-block p-2 rounded my-1 max-w-[50%] break-words ${bubbleStyle}`}
                 >
                   <div className="flex flex-col gap-2">
                     {message.image && (
