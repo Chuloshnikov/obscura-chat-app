@@ -16,6 +16,7 @@ import { useAuthStore } from "@/store/useAuthStore";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FormType } from "@/types";
+import { Loader2 } from "lucide-react";
 
 
 
@@ -110,7 +111,16 @@ const AuthForm = ({ type }: {type: FormType}) => {
             </form>
         </Form>
         <p className="text-center text-gray-400 text-sm">
-          {isSignIn ? "No account yet?" : "Have an account already?"}
+        {isLoggingIn || isSigningUp || isCheckingAuth ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Loading...
+                </>
+              ) : (
+                <>
+                {isSignIn ? "No account yet?" : "Have an account already?"}
+                </>
+              )}
           <Link 
           className="font-bold text-gray-500 ml-1"
           to={!isSignIn ? '/sign-in' : '/sign-up'}

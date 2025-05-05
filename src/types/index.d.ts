@@ -42,11 +42,9 @@ export interface User {
   }
   
   export interface SignupData {
-    fullName: string;
-    username: string;
+    fullName?: string;
+    name: string;
     password: string;
-    confirmPassword: string;
-    gender: string;
   }
   
   export interface LoginData {
