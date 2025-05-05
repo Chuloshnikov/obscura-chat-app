@@ -43,12 +43,12 @@ export interface User {
   
   export interface SignupData {
     fullName?: string;
-    name: string;
+    email: string;
     password: string;
   }
   
   export interface LoginData {
-    username: string;
+    email: string;
     password: string;
   }
   
