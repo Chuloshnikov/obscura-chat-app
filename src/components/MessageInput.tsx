@@ -4,6 +4,10 @@ import { Image, Send, X } from "lucide-react";
 import { toast } from "sonner";
 import { MessageData } from "@/types";
 
+
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+
 const MessageInput = () => {
     const [text, setText] = useState("");
     const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -68,51 +72,52 @@ const MessageInput = () => {
                 alt="Preview"
                 className="w-20 h-20 object-cover rounded-lg border border-zinc-700"
               />
-              <button
+              <Button
                 onClick={removeImage}
-                className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-base-300
-                flex items-center justify-center"
+                className="absolute -top-0 -right-0 w-5 h-5 border border-white rounded-lg shadow-lg bg-base-300
+                flex items-center justify-center cursor-pointer hover:bg-white hover:border-black"
                 type="button"
               >
-                <X className="size-3" />
-              </button>
+                <X className="size-3 text-black" />
+              </Button>
             </div>
           </div>
         )}
   
         <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-          <div className="flex-1 flex gap-2">
-            <input
+          <div className="flex gap-2 items-center flex-1">
+            <Input
               type="text"
-              className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+              className="w-full input input-bordered rounded-lg input-sm py-1 sm:input-md"
               placeholder="Type a message..."
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
-            <input
-              type="file"
-              accept="image/*"
-              className="hidden"
-              ref={fileInputRef}
-              onChange={handleImageChange}
-            />
-  
-            <button
-              type="button"
-              className={`hidden sm:flex btn btn-circle
-                       ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <Image size={20} />
-            </button>
+            <div>
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                ref={fileInputRef}
+                onChange={handleImageChange}
+              />
+              <Button
+                type="button"
+                className={`hidden sm:flex btn btn-circle
+                        ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+                onClick={() => fileInputRef.current?.click()}
+              >
+                <Image size={20} />
+              </Button>
+            </div>
           </div>
-          <button
+          <Button
             type="submit"
-            className="btn btn-sm btn-circle"
+            className="btn max-w-[80px]"
             disabled={!text.trim() && !imagePreview}
           >
             <Send size={22} />
-          </button>
+          </Button>
         </form>
       </div>
     );
