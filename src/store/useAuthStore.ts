@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { io, Socket } from "socket.io-client";
 import { AuthState, SignupData, LoginData, UpdateProfileData, User } from "../types";
 
-const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:8080" : import.meta.env.BACKEND_URL;
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:8080" : import.meta.env.VITE_BACKEND_URL;
 
 export const useAuthStore = create<AuthState>((set, get) => ({
   authUser: null,

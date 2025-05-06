@@ -3,7 +3,7 @@ import axios from "axios";
 // Базовый URL для API
 const BASE_URL = import.meta.env.MODE === "development" 
   ? "http://localhost:8080/api" 
-  : import.meta.env.BACKEND_URL;
+  : import.meta.env.VITE_BACKEND_URL;
 
 // Создание экземпляра axios с настройками
 export const axiosInstance = axios.create({
