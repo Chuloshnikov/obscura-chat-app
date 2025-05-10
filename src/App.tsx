@@ -28,6 +28,12 @@ function App() {
     )
   }
 
+  if (!authUser) {
+    return (
+     <Navigate to="/sign-in"/>
+    )
+  }
+
   return (
     <div>
     <Navbar/>
