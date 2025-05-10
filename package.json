@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview --port $PORT"
+    "start": "vite preview --host --port $PORT"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
