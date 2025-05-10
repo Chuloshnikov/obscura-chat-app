@@ -12,10 +12,11 @@ import { Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import { Loader } from "lucide-react";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { useEffect } from "react";
 
 
 function App() {
-  const { authUser, isCheckingAuth } = useAuthStore();
+ const { isCheckingAuth } = useAuthStore();
 
   useEffect(() => {
     useAuthStore.getState().checkAuth();
